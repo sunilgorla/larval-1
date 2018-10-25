@@ -1,10 +1,9 @@
+cd $CODEBUILD_SRC_DIR; composer install --no-interaction --prefer-dist
 version: 0.2
-
 phases:
   build:
     commands:
-      - echo Build started on `date`
-      - composer install
+      - cd $CODEBUILD_SRC_DIR; composer install --no-interaction --prefer-dist
 artifacts:
   files:
-    - "*/**"
+    - '**/*'
